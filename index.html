@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e9">
+  <meta name="description" content="Official website of Dr. Himmat Singh Sinha Trust.">
+  <title>Dr. Himmat Singh Sinha Trust</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Dr. Himmat Singh Sinha Trust home">
+      <span class="wordmark-seal" aria-hidden="true">HS</span>
+      <span class="wordmark-name">Dr. Himmat Singh<br> Sinha Trust</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+      <span></span><span></span>
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a class="nav-link is-current" href="#home" data-home>Home</a>
+      <button class="nav-link" type="button" data-section="biography">Biography</button>
+      <button class="nav-link" type="button" data-section="bibliography">Bibliography</button>
+      <button class="nav-link" type="button" data-section="books">Books</button>
+      <button class="nav-link" type="button" data-section="writings">Writings</button>
+      <button class="nav-link" type="button" data-section="publications">Publications</button>
+      <button class="nav-link" type="button" data-section="achievements">Achievements</button>
+      <button class="nav-link" type="button" data-section="articles">Articles</button>
+      <button class="nav-link" type="button" data-section="gallery">Gallery</button>
+      <button class="nav-link" type="button" data-section="contact">Contact</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-rule"></span> Dr. Himmat Singh Sinha Trust</p>
+        <h1 id="hero-title">Dr. Himmat<br><em>Singh Sinha</em><br>Trust</h1>
+        <div class="hero-bottom">
+          <p class="hero-note" aria-label="Introduction to be added"></p>
+          <button class="text-link" type="button" data-section="biography">Explore the collection <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+      <figure class="portrait-frame" aria-label="Portrait placeholder">
+        <img class="portrait-image" src="assets/images/dr-himmat-singh-sinha.jpg" alt="Portrait of Dr. Himmat Singh Sinha; replace this text when the photograph is added." onerror="this.hidden=true; this.parentElement.classList.add('is-empty')">
+        <div class="portrait-placeholder" aria-hidden="true">
+          <span class="portrait-initials">HS</span>
+          <span class="portrait-caption">Portrait to be added</span>
+        </div>
+        <figcaption class="portrait-index"><span>01</span><span>Portrait</span></figcaption>
+      </figure>
+      <div class="hero-rail" aria-hidden="true"><span>PROFILE &amp; ARCHIVE</span><span>01 — 09</span></div>
+    </section>
+
+    <section class="index-section" aria-labelledby="index-title">
+      <div class="index-heading">
+        <p class="eyebrow">Explore</p>
+        <h2 id="index-title">Sections</h2>
+      </div>
+      <div class="section-grid">
+        <button class="section-card" data-section="biography"><span class="card-number">01</span><span class="card-title">Biography</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="section-card" data-section="bibliography"><span class="card-number">02</span><span class="card-title">Bibliography</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="section-card" data-section="books"><span class="card-number">03</span><span class="card-title">Books</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="section-card" data-section="writings"><span class="card-number">04</span><span class="card-title">Writings</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="section-card" data-section="publications"><span class="card-number">05</span><span class="card-title">Publications</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="section-card" data-section="achievements"><span class="card-number">06</span><span class="card-title">Achievements</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="section-card" data-section="articles"><span class="card-number">07</span><span class="card-title">Articles</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="section-card" data-section="gallery"><span class="card-number">08</span><span class="card-title">Gallery</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="section-card" data-section="contact"><span class="card-number">09</span><span class="card-title">Contact</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-name" href="#home">Dr. Himmat Singh Sinha Trust</a>
+    <span class="footer-note">&copy; <span id="year"></span></span>
+  </footer>
+
+  <dialog class="content-dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-empty-state">
+    <div class="dialog-topline"><span class="dialog-kicker">Dr. Himmat Singh Sinha Trust</span><button class="dialog-close" type="button" aria-label="Close dialog">Close <span aria-hidden="true">×</span></button></div>
+    <div class="dialog-content"><p class="eyebrow"><span class="eyebrow-rule"></span><span id="dialog-category">Section</span></p><h2 id="dialog-title">Section</h2><div class="dialog-divider"></div><div class="dialog-empty" id="dialog-empty-state"><span class="empty-mark" aria-hidden="true"></span><p>Content to be added</p></div></div>
+    <span class="dialog-number" aria-hidden="true"></span>
+  </dialog>
+  <div class="dialog-backdrop" hidden></div>
+</body>
+</html>
