@@ -3,89 +3,496 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f1e9">
-  <meta name="description" content="Official website of Dr. Himmat Singh Sinha Trust.">
+  <meta name="theme-color" content="#080d10">
+  <meta name="description" content="Official website of the Dr. Himmat Singh Sinha Trust — an archive of the life, work and legacy of Dr. Himmat Singh Sinha.">
+  <meta name="color-scheme" content="dark">
   <title>Dr. Himmat Singh Sinha Trust</title>
+
+  <script>document.documentElement.classList.add('js');</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+
+  <!-- ── Entrance ─────────────────────────────────────────────── -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-mark">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><circle cx="24" cy="24" r="14.6"/><path d="M24 .8v6.4M24 40.8v6.4M.8 24h6.4M40.8 24h6.4"/></svg>
+      <span>HS</span>
+    </div>
+    <div class="preloader-bar"><i id="preloader-fill"></i></div>
+    <p class="preloader-label">Preparing the archive</p>
+  </div>
+
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <a class="wordmark" href="#home" aria-label="Dr. Himmat Singh Sinha Trust home">
-      <span class="wordmark-seal" aria-hidden="true">HS</span>
-      <span class="wordmark-name">Dr. Himmat Singh<br> Sinha Trust</span>
-    </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
-      <span></span><span></span>
-    </button>
-    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
-      <a class="nav-link is-current" href="#home" data-home>Home</a>
-      <button class="nav-link" type="button" data-section="biography">Biography</button>
-      <button class="nav-link" type="button" data-section="bibliography">Bibliography</button>
-      <button class="nav-link" type="button" data-section="books">Books</button>
-      <button class="nav-link" type="button" data-section="writings">Writings</button>
-      <button class="nav-link" type="button" data-section="publications">Publications</button>
-      <button class="nav-link" type="button" data-section="achievements">Achievements</button>
-      <button class="nav-link" type="button" data-section="articles">Articles</button>
-      <button class="nav-link" type="button" data-section="gallery">Gallery</button>
-      <button class="nav-link" type="button" data-section="contact">Contact</button>
-    </nav>
+
+  <div class="scroll-progress" aria-hidden="true"><i id="progress-fill"></i></div>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <i class="cursor-ring"></i>
+    <i class="cursor-dot"></i>
+  </div>
+
+  <!-- ── Header ───────────────────────────────────────────────── -->
+  <header class="site-header" id="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="#home" data-home aria-label="Dr. Himmat Singh Sinha Trust home">
+        <span class="wordmark-seal" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18.6"/><circle cx="20" cy="20" r="12.6"/><path d="M20 1.4v6M20 32.6v6M1.4 20h6M32.6 20h6"/></svg>
+        </span>
+        <span class="wordmark-name">Dr. Himmat Singh<br>Sinha Trust</span>
+      </a>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a class="nav-link is-current" href="#home" data-home>Home</a>
+        <button class="nav-link" type="button" data-section="biography">Biography</button>
+        <button class="nav-link" type="button" data-section="bibliography">Bibliography</button>
+        <button class="nav-link" type="button" data-section="books">Books</button>
+        <button class="nav-link" type="button" data-section="writings">Writings</button>
+        <button class="nav-link" type="button" data-section="publications">Publications</button>
+        <button class="nav-link" type="button" data-section="achievements">Achievements</button>
+        <button class="nav-link" type="button" data-section="articles">Articles</button>
+        <button class="nav-link" type="button" data-section="gallery">Gallery</button>
+        <button class="nav-link" type="button" data-section="contact">Contact</button>
+      </nav>
+
+      <button class="header-cta" type="button" data-section="contact">
+        <span>Get in touch</span>
+        <i aria-hidden="true">↗</i>
+      </button>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+    </div>
   </header>
 
+  <!-- ── Mobile navigation ────────────────────────────────────── -->
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <div class="mobile-menu-inner">
+      <p class="mobile-menu-label">Sections</p>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <button type="button" class="mobile-link" data-section="biography"><span>01</span> Biography</button>
+        <button type="button" class="mobile-link" data-section="bibliography"><span>02</span> Bibliography</button>
+        <button type="button" class="mobile-link" data-section="books"><span>03</span> Books</button>
+        <button type="button" class="mobile-link" data-section="writings"><span>04</span> Writings</button>
+        <button type="button" class="mobile-link" data-section="publications"><span>05</span> Publications</button>
+        <button type="button" class="mobile-link" data-section="achievements"><span>06</span> Achievements</button>
+        <button type="button" class="mobile-link" data-section="articles"><span>07</span> Articles</button>
+        <button type="button" class="mobile-link" data-section="gallery"><span>08</span> Gallery</button>
+        <button type="button" class="mobile-link" data-section="contact"><span>09</span> Contact</button>
+      </nav>
+      <a class="mobile-home" href="#home" data-home>Back to top</a>
+    </div>
+  </div>
+
   <main id="main">
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-rule"></span> Dr. Himmat Singh Sinha Trust</p>
-        <h1 id="hero-title">Dr. Himmat<br><em>Singh Sinha</em><br>Trust</h1>
-        <div class="hero-bottom">
-          <p class="hero-note" aria-label="Introduction to be added"></p>
-          <button class="text-link" type="button" data-section="biography">Explore the collection <span aria-hidden="true">↗</span></button>
+
+    <!-- ── Portrait band: the photograph, at the top of the site ─ -->
+    <section class="portrait-band" aria-label="Dr. Himmat Singh Sinha">
+      <figure class="portrait-band-figure" data-reveal="up">
+        <img class="portrait-band-img"
+             src="assets/images/dr-himmat-singh-sinha.jpg"
+             alt="Dr. Himmat Singh Sinha"
+             height="450" width="600">
+        <div class="portrait-band-fallback" aria-hidden="true">
+          <span class="portrait-band-mark">HS</span>
+          <span class="portrait-band-note">Portrait to be added</span>
         </div>
-      </div>
-      <figure class="portrait-frame" aria-label="Portrait placeholder">
-        <img class="portrait-image" src="assets/images/dr-himmat-singh-sinha.jpg" alt="Portrait of Dr. Himmat Singh Sinha; replace this text when the photograph is added." onerror="this.hidden=true; this.parentElement.classList.add('is-empty')">
-        <div class="portrait-placeholder" aria-hidden="true">
-          <span class="portrait-initials">HS</span>
-          <span class="portrait-caption">Portrait to be added</span>
-        </div>
-        <figcaption class="portrait-index"><span>01</span><span>Portrait</span></figcaption>
+        <span class="hero-tick hero-tick-tl" aria-hidden="true"></span>
+        <span class="hero-tick hero-tick-tr" aria-hidden="true"></span>
+        <span class="hero-tick hero-tick-bl" aria-hidden="true"></span>
+        <span class="hero-tick hero-tick-br" aria-hidden="true"></span>
+        <figcaption class="portrait-band-caption">
+          <span class="portrait-band-caption-name">Dr. Himmat Singh Sinha</span>
+          <span class="portrait-band-caption-note">Trust · Archive</span>
+        </figcaption>
       </figure>
-      <div class="hero-rail" aria-hidden="true"><span>PROFILE &amp; ARCHIVE</span><span>01 — 09</span></div>
     </section>
 
-    <section class="index-section" aria-labelledby="index-title">
-      <div class="index-heading">
-        <p class="eyebrow">Explore</p>
-        <h2 id="index-title">Sections</h2>
+    <!-- ── Hero ───────────────────────────────────────────────── -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="hero-atmosphere" aria-hidden="true">
+        <span class="orb orb-a" data-parallax="0.18"></span>
+        <span class="orb orb-b" data-parallax="0.10"></span>
+        <span class="hero-mesh"></span>
+        <span class="hero-grid"></span>
+        <span class="hero-noise"></span>
       </div>
-      <div class="section-grid">
-        <button class="section-card" data-section="biography"><span class="card-number">01</span><span class="card-title">Biography</span><span class="card-arrow" aria-hidden="true">↗</span></button>
-        <button class="section-card" data-section="bibliography"><span class="card-number">02</span><span class="card-title">Bibliography</span><span class="card-arrow" aria-hidden="true">↗</span></button>
-        <button class="section-card" data-section="books"><span class="card-number">03</span><span class="card-title">Books</span><span class="card-arrow" aria-hidden="true">↗</span></button>
-        <button class="section-card" data-section="writings"><span class="card-number">04</span><span class="card-title">Writings</span><span class="card-arrow" aria-hidden="true">↗</span></button>
-        <button class="section-card" data-section="publications"><span class="card-number">05</span><span class="card-title">Publications</span><span class="card-arrow" aria-hidden="true">↗</span></button>
-        <button class="section-card" data-section="achievements"><span class="card-number">06</span><span class="card-title">Achievements</span><span class="card-arrow" aria-hidden="true">↗</span></button>
-        <button class="section-card" data-section="articles"><span class="card-number">07</span><span class="card-title">Articles</span><span class="card-arrow" aria-hidden="true">↗</span></button>
-        <button class="section-card" data-section="gallery"><span class="card-number">08</span><span class="card-title">Gallery</span><span class="card-arrow" aria-hidden="true">↗</span></button>
-        <button class="section-card" data-section="contact"><span class="card-number">09</span><span class="card-title">Contact</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+
+      <div class="shell hero-shell">
+        <div class="hero-copy">
+          <p class="eyebrow" data-reveal="fade">
+            <span class="eyebrow-rule"></span>
+            Profile &amp; Archive
+          </p>
+
+          <h1 class="hero-title" id="hero-title">
+            <span class="line"><span class="line-in">Dr. Himmat</span></span>
+            <span class="line"><span class="line-in">Singh <em>Sinha</em></span></span>
+            <span class="line"><span class="line-in">Trust</span></span>
+          </h1>
+
+          <p class="hero-lede" data-reveal="up" data-delay="120">
+            An archive of the life, work and legacy of Dr. Himmat Singh Sinha —
+            held, catalogued and shared by the Trust.
+          </p>
+
+          <div class="hero-actions" data-reveal="up" data-delay="220">
+            <button class="btn btn-primary" type="button" data-section="biography" data-magnetic>
+              <span>Explore the collection</span>
+              <i aria-hidden="true">↗</i>
+            </button>
+            <button class="btn btn-ghost" type="button" data-section="contact">
+              <span>Contact the Trust</span>
+            </button>
+          </div>
+        </div>
+
+        <figure class="hero-visual" id="hero-visual" data-parallax="0.14">
+          <div class="hero-frame">
+            <span class="hero-frame-glow" aria-hidden="true"></span>
+            <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+            <div class="hero-frame-fallback" aria-hidden="true">
+              <span class="hero-fallback-mark">HS</span>
+              <span class="hero-fallback-caption">Kinetic sculpture</span>
+            </div>
+            <span class="hero-tick hero-tick-tl" aria-hidden="true"></span>
+            <span class="hero-tick hero-tick-tr" aria-hidden="true"></span>
+            <span class="hero-tick hero-tick-bl" aria-hidden="true"></span>
+            <span class="hero-tick hero-tick-br" aria-hidden="true"></span>
+            <span class="hero-badge" aria-hidden="true">3D</span>
+          </div>
+          <figcaption class="hero-visual-index">
+            <span class="hero-visual-num">02</span>
+            <span>Sculpture</span>
+            <span class="hero-visual-state">Kinetic form</span>
+          </figcaption>        </figure>
+      </div>
+
+      <div class="hero-foot" aria-hidden="true">
+        <span class="hero-foot-scroll">Scroll to explore</span>
+        <span class="hero-foot-line"></span>
+        <span class="hero-foot-count">01 — 09</span>
+      </div>
+    </section>
+
+    <!-- ── Marquee ────────────────────────────────────────────── -->
+    <section class="marquee" aria-label="Sections of the archive">
+      <div class="marquee-track" data-marquee>
+        <span class="marquee-set">
+          <span>Biography</span><i aria-hidden="true">✳</i>
+          <span>Bibliography</span><i aria-hidden="true">✳</i>
+          <span>Books</span><i aria-hidden="true">✳</i>
+          <span>Writings</span><i aria-hidden="true">✳</i>
+          <span>Publications</span><i aria-hidden="true">✳</i>
+          <span>Achievements</span><i aria-hidden="true">✳</i>
+          <span>Articles</span><i aria-hidden="true">✳</i>
+          <span>Gallery</span><i aria-hidden="true">✳</i>
+          <span>Contact</span><i aria-hidden="true">✳</i>
+        </span>
+        <span class="marquee-set" aria-hidden="true">
+          <span>Biography</span><i>✳</i>
+          <span>Bibliography</span><i>✳</i>
+          <span>Books</span><i>✳</i>
+          <span>Writings</span><i>✳</i>
+          <span>Publications</span><i>✳</i>
+          <span>Achievements</span><i>✳</i>
+          <span>Articles</span><i>✳</i>
+          <span>Gallery</span><i>✳</i>
+          <span>Contact</span><i>✳</i>
+        </span>
+      </div>
+    </section>
+
+    <!-- ── Numbers ────────────────────────────────────────────── -->
+    <section class="numbers" aria-labelledby="numbers-title">
+      <div class="shell">
+        <div class="numbers-head">
+          <p class="eyebrow" data-reveal="fade"><span class="eyebrow-rule"></span> The archive in numbers</p>
+          <h2 class="numbers-title" id="numbers-title" data-reveal="lines">A record still being assembled</h2>
+        </div>
+
+        <dl class="numbers-grid">
+          <div class="number-cell" data-reveal="up">
+            <dt>Sections catalogued</dt>
+            <dd>
+              <span class="count" data-count="9" data-pad="2">09</span>
+              <p>From biography to correspondence, every part of the archive has its own entry.</p>
+            </dd>
+          </div>
+          <div class="number-cell" data-reveal="up" data-delay="90">
+            <dt>Portrait of Dr. Sinha</dt>
+            <dd>
+              <span class="count" data-count="1" data-pad="2">01</span>
+              <p>The photograph supplied by the Trust will take the place of the sculpture above.</p>
+            </dd>
+          </div>
+          <div class="number-cell" data-reveal="up" data-delay="180">
+            <dt>Verified records published</dt>
+            <dd>
+              <span class="count" data-count="0" data-pad="2">00</span>
+              <p>Nothing has been published until the Trust confirms it. Placeholders hold the space.</p>
+            </dd>
+          </div>
+        </dl>
+
+        <p class="numbers-note" data-reveal="fade">
+          Figures describe the present state of this website only. They are not claims about
+          Dr. Sinha’s life or work, and they will be replaced by verified records as content is supplied.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Manifesto ─────────────────────────────────────────── -->
+    <section class="manifesto" aria-labelledby="manifesto-title">
+      <div class="shell manifesto-grid">
+        <aside class="manifesto-aside" data-reveal="fade">
+          <p class="eyebrow"><span class="eyebrow-rule"></span> The Trust</p>
+          <p class="manifesto-meta">Held and maintained<br>by the Trust</p>
+          <span class="manifesto-seal" aria-hidden="true">
+            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="57"/><circle cx="60" cy="60" r="42"/><path d="M60 1.5v9M60 109.5v9M1.5 60h9M109.5 60h9"/></svg>
+          </span>
+        </aside>
+
+        <div class="manifesto-body">
+          <h2 class="manifesto-statement" id="manifesto-title" data-reveal="lines">
+            Everything Dr. Himmat Singh Sinha wrote, built and stood for — kept in one place, and opened to everyone.
+          </h2>
+
+          <p class="manifesto-lede" data-reveal="up">
+            <span class="hero-note" aria-label="Introduction to be added"></span>
+            This is the digital home of the Dr. Himmat Singh Sinha Trust. The sections below catalogued
+            biography, books, writings, publications, achievements, articles and correspondence.
+            Each one is being prepared and verified before it is published.
+          </p>
+
+          <div class="manifesto-panel" data-reveal="up" data-delay="120">
+            <span class="pending-ring" aria-hidden="true"></span>
+            <div class="manifesto-panel-copy">
+              <strong>Content to be added</strong>
+              <span>Verified material supplied by the Trust will appear here. No dates, titles or
+              credentials are included until they have been confirmed.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Index ─────────────────────────────────────────────── -->
+    <section class="index-section" id="sections" aria-labelledby="index-title">
+      <div class="shell index-grid">
+        <div class="index-side">
+          <div class="index-side-sticky">
+            <p class="eyebrow" data-reveal="fade"><span class="eyebrow-rule"></span> Explore</p>
+            <h2 class="index-title" id="index-title" data-reveal="lines">Sections</h2>
+            <p class="index-note" data-reveal="up">
+              Nine catalogued sections. Select any one to open it — each opens the same
+              record panel while its verified content is being prepared.
+            </p>
+            <div class="index-meter" aria-hidden="true">
+              <span class="index-meter-fill" id="index-meter"></span>
+            </div>
+          </div>
+        </div>
+
+        <ol class="index-list">
+          <li data-reveal="up"><button class="index-row" type="button" data-section="biography">
+            <span class="index-num">01</span>
+            <span class="index-name">Biography</span>
+            <span class="index-state">Content to be added</span>
+            <span class="index-arrow" aria-hidden="true">↗</span>
+          </button></li>
+          <li data-reveal="up" data-delay="40"><button class="index-row" type="button" data-section="bibliography">
+            <span class="index-num">02</span>
+            <span class="index-name">Bibliography</span>
+            <span class="index-state">Content to be added</span>
+            <span class="index-arrow" aria-hidden="true">↗</span>
+          </button></li>
+          <li data-reveal="up" data-delay="80"><button class="index-row" type="button" data-section="books">
+            <span class="index-num">03</span>
+            <span class="index-name">Books</span>
+            <span class="index-state">Content to be added</span>
+            <span class="index-arrow" aria-hidden="true">↗</span>
+          </button></li>
+          <li data-reveal="up" data-delay="120"><button class="index-row" type="button" data-section="writings">
+            <span class="index-num">04</span>
+            <span class="index-name">Writings</span>
+            <span class="index-state">Content to be added</span>
+            <span class="index-arrow" aria-hidden="true">↗</span>
+          </button></li>
+          <li data-reveal="up" data-delay="160"><button class="index-row" type="button" data-section="publications">
+            <span class="index-num">05</span>
+            <span class="index-name">Publications</span>
+            <span class="index-state">Content to be added</span>
+            <span class="index-arrow" aria-hidden="true">↗</span>
+          </button></li>
+          <li data-reveal="up" data-delay="200"><button class="index-row" type="button" data-section="achievements">
+            <span class="index-num">06</span>
+            <span class="index-name">Achievements</span>
+            <span class="index-state">Content to be added</span>
+            <span class="index-arrow" aria-hidden="true">↗</span>
+          </button></li>
+          <li data-reveal="up" data-delay="240"><button class="index-row" type="button" data-section="articles">
+            <span class="index-num">07</span>
+            <span class="index-name">Articles</span>
+            <span class="index-state">Content to be added</span>
+            <span class="index-arrow" aria-hidden="true">↗</span>
+          </button></li>
+          <li data-reveal="up" data-delay="280"><button class="index-row" type="button" data-section="gallery">
+            <span class="index-num">08</span>
+            <span class="index-name">Gallery</span>
+            <span class="index-state">Content to be added</span>
+            <span class="index-arrow" aria-hidden="true">↗</span>
+          </button></li>
+          <li data-reveal="up" data-delay="320"><button class="index-row" type="button" data-section="contact">
+            <span class="index-num">09</span>
+            <span class="index-name">Contact</span>
+            <span class="index-state">Content to be added</span>
+            <span class="index-arrow" aria-hidden="true">↗</span>
+          </button></li>
+        </ol>
+      </div>
+
+      <figure class="row-preview" id="row-preview" aria-hidden="true">
+        <span class="row-preview-art"></span>
+        <figcaption class="row-preview-copy">
+          <span class="row-preview-num">01</span>
+          <span class="row-preview-name">Biography</span>
+          <span class="row-preview-state">Content to be added</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ── At a glance ───────────────────────────────────────── -->
+    <section class="glance" aria-labelledby="glance-title">
+      <div class="shell">
+        <div class="glance-head">
+          <p class="eyebrow" data-reveal="fade"><span class="eyebrow-rule"></span> At a glance</p>
+          <h2 class="glance-title" id="glance-title" data-reveal="lines">How the collection is organised</h2>
+          <p class="glance-intro" data-reveal="up">
+            The nine sections group into three parts of the archive. Each part opens the
+            records it holds as soon as the Trust supplies them.
+          </p>
+        </div>
+
+        <div class="glance-grid">
+          <article class="glance-cell" data-reveal="up">
+            <span class="glance-index">A</span>
+            <h3 class="glance-cell-title">Life &amp; Times</h3>
+            <p class="glance-cell-desc">The person behind the record — biography, milestones and recognition.</p>
+            <ul class="glance-links">
+              <li><button type="button" data-section="biography">Biography <i aria-hidden="true">↗</i></button></li>
+              <li><button type="button" data-section="achievements">Achievements <i aria-hidden="true">↗</i></button></li>
+            </ul>
+            <span class="glance-pending">Content to be added</span>
+          </article>
+
+          <article class="glance-cell" data-reveal="up" data-delay="110">
+            <span class="glance-index">B</span>
+            <h3 class="glance-cell-title">Written Works</h3>
+            <p class="glance-cell-desc">Bibliography, books, writings, publications and articles, kept apart so each can be cited.</p>
+            <ul class="glance-links">
+              <li><button type="button" data-section="bibliography">Bibliography <i aria-hidden="true">↗</i></button></li>
+              <li><button type="button" data-section="books">Books <i aria-hidden="true">↗</i></button></li>
+              <li><button type="button" data-section="writings">Writings <i aria-hidden="true">↗</i></button></li>
+              <li><button type="button" data-section="publications">Publications <i aria-hidden="true">↗</i></button></li>
+              <li><button type="button" data-section="articles">Articles <i aria-hidden="true">↗</i></button></li>
+            </ul>
+            <span class="glance-pending">Content to be added</span>
+          </article>
+
+          <article class="glance-cell" data-reveal="up" data-delay="220">
+            <span class="glance-index">C</span>
+            <h3 class="glance-cell-title">Visual Record</h3>
+            <p class="glance-cell-desc">Approved images, the portrait of Dr. Sinha, and how to reach the Trust.</p>
+            <ul class="glance-links">
+              <li><button type="button" data-section="gallery">Gallery <i aria-hidden="true">↗</i></button></li>
+              <li><button type="button" data-section="contact">Contact <i aria-hidden="true">↗</i></button></li>
+            </ul>
+            <span class="glance-pending">Content to be added</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Call to action ─────────────────────────────────────── -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="shell">
+        <p class="eyebrow" data-reveal="fade"><span class="eyebrow-rule"></span> Enquiries</p>
+        <h2 class="cta-title" id="cta-title" data-reveal="lines">Reach the Trust</h2>
+
+        <button class="cta-big" type="button" data-section="contact" data-reveal="scale" data-magnetic>
+          <span class="cta-big-layer cta-big-layer-a">
+            <span class="cta-big-text">Get in touch</span>
+            <i aria-hidden="true">↗</i>
+          </span>
+          <span class="cta-big-layer cta-big-layer-b" aria-hidden="true">
+            <span class="cta-big-text">Get in touch</span>
+            <i>↗</i>
+          </span>
+        </button>
+
+        <p class="cta-note" data-reveal="up">
+          Verified contact details supplied by the Trust will be published in the Contact section.
+        </p>
       </div>
     </section>
   </main>
 
+  <!-- ── Footer ───────────────────────────────────────────────── -->
   <footer class="site-footer">
-    <a class="footer-name" href="#home">Dr. Himmat Singh Sinha Trust</a>
-    <span class="footer-note">&copy; <span id="year"></span></span>
+    <div class="shell">
+      <div class="footer-top">
+        <a class="footer-name" href="#home" data-home>Dr. Himmat Singh Sinha Trust</a>
+        <p class="footer-tagline">An archive of the life, work and legacy of Dr. Himmat Singh Sinha.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <button type="button" data-section="biography">Biography</button>
+        <button type="button" data-section="bibliography">Bibliography</button>
+        <button type="button" data-section="books">Books</button>
+        <button type="button" data-section="writings">Writings</button>
+        <button type="button" data-section="publications">Publications</button>
+        <button type="button" data-section="achievements">Achievements</button>
+        <button type="button" data-section="articles">Articles</button>
+        <button type="button" data-section="gallery">Gallery</button>
+        <button type="button" data-section="contact">Contact</button>
+      </nav>
+
+      <div class="footer-bottom">
+        <span class="footer-note">&copy; <span id="year"></span> Dr. Himmat Singh Sinha Trust</span>
+        <span class="footer-state">Content to be added</span>
+        <span class="footer-credit">Developed by <a href="https://github.com/vaibhavdhiman556-ux" target="_blank" rel="noopener">Vebv Dhiman</a></span>
+      </div>
+    </div>
   </footer>
 
+  <!-- ── Record dialog ───────────────────────────────────────── -->
   <dialog class="content-dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-empty-state">
-    <div class="dialog-topline"><span class="dialog-kicker">Dr. Himmat Singh Sinha Trust</span><button class="dialog-close" type="button" aria-label="Close dialog">Close <span aria-hidden="true">×</span></button></div>
-    <div class="dialog-content"><p class="eyebrow"><span class="eyebrow-rule"></span><span id="dialog-category">Section</span></p><h2 id="dialog-title">Section</h2><div class="dialog-divider"></div><div class="dialog-empty" id="dialog-empty-state"><span class="empty-mark" aria-hidden="true"></span><p>Content to be added</p></div></div>
+    <div class="dialog-topline">
+      <span class="dialog-kicker">Dr. Himmat Singh Sinha Trust</span>
+      <button class="dialog-close" type="button" aria-label="Close dialog">Close <span aria-hidden="true">×</span></button>
+    </div>
+    <div class="dialog-content">
+      <span class="dialog-glow" aria-hidden="true"></span>
+      <p class="eyebrow"><span class="eyebrow-rule"></span><span id="dialog-category">Section</span></p>
+      <h2 id="dialog-title">Section</h2>
+      <div class="dialog-divider"></div>
+      <div class="dialog-empty" id="dialog-empty-state">
+        <span class="empty-mark" aria-hidden="true"></span>
+        <p>Content to be added</p>
+      </div>
+      <p class="dialog-hint">Verified material supplied by the Trust will be published in this record.</p>
+    </div>
     <span class="dialog-number" aria-hidden="true"></span>
   </dialog>
   <div class="dialog-backdrop" hidden></div>
+
 </body>
 </html>
